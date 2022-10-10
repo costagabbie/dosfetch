@@ -5,7 +5,7 @@
 #include<dos.h>
 #include "dosfetch.h"
 
-int read_art(char* filename){
+/*int read_art(char* filename){
     FILE *f = fopen(filename, "r");
     if(f == NULL){
         return 0;
@@ -19,8 +19,24 @@ int read_art(char* filename){
         }
     }
     return 1;
-}
+}*/
 
+int read_art(char* filename){
+    FILE *f = fopen(filename, "r");
+    int i =0;
+    if(f == NULL){
+        return 0;
+    }
+    memset(&ascii_art,0x20,sizeof(ascii_art)); //initializing with blank spaces (ASCII 0x20)
+    for(int i =0;i < ASCII_ART_HEIGHT; i++){ //read files until EOF or error happens
+        if(fgets(ascii_art[i],ASCII_ART_WIDTH,f) == NULL){
+            return 1;
+        }
+        ascii_art[i][strlen(ascii_art[i])-1] = 0x00; //another avil hack to remove the \n
+
+    }
+    return 1;
+}
 int main(int argc, char* argv[]){
     //Reading what the BIOS has to tell us about the equipment
     be_t equip;
