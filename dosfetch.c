@@ -5,22 +5,6 @@
 #include<dos.h>
 #include "dosfetch.h"
 
-/*int read_art(char* filename){
-    FILE *f = fopen(filename, "r");
-    if(f == NULL){
-        return 0;
-    }
-    for(int i =0;i < ASCII_ART_HEIGHT; i++){
-        if(!feof(f)){
-            fgets(ascii_art[i],ASCII_ART_WIDTH,f);
-        }
-        else{
-            ascii_art[i][0] = "                     ";
-        }
-    }
-    return 1;
-}*/
-
 int read_art(char* filename){
     FILE *f = fopen(filename, "r");
     int i =0;
