@@ -5,4 +5,4 @@ My newbie take on a fetch program, but for real mode DOS.
 I used DJGPP on DOSBOX and compiled with `gcc dosfetch.c -O2 -o dosfetch`
 
 ## Bugs
-The custom art reading routine is glitched :(
+as far as i tested everything worked, but there's a lot of room for improvements on the code, and new features.
