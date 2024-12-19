@@ -16,7 +16,7 @@ int read_art(char* filename){
         if(fgets(ascii_art[i],ASCII_ART_WIDTH,f) == NULL){
             return 1;
         }
-        ascii_art[i][strlen(ascii_art[i])-1] = 0x00; //another avil hack to remove the \n
+        ascii_art[i][strlen(ascii_art[i])-1] = 0x00; //another evil hack to remove the \n
 
     }
     return 1;
